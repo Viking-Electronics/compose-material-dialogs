@@ -34,6 +34,12 @@ android {
     }
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+
 dependencies {
     implementation(project(":core"))
     implementation(project(":datetime"))
