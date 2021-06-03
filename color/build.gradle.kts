@@ -41,29 +41,29 @@ val VERSION_NAME: String by project
 val mavenCentralRepositoryUsername: String? by project
 val mavenCentralRepositoryPassword: String? by project
 
-publishing {
-    repositories {
-        withType<MavenArtifactRepository> {
-            if (name == "local") {
-                return@withType
-            }
-
-            val releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-            val snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-
-            url = if (VERSION_NAME.endsWith("SNAPSHOT")) {
-                uri(snapshotsRepoUrl)
-            } else {
-                uri(releasesRepoUrl)
-            }
-
-            credentials {
-                username = mavenCentralRepositoryUsername
-                password = mavenCentralRepositoryPassword
-            }
-        }
-    }
-}
+//publishing {
+//    repositories {
+//        withType<MavenArtifactRepository> {
+//            if (name == "local") {
+//                return@withType
+//            }
+//
+//            val releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+//            val snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+//
+//            url = if (VERSION_NAME.endsWith("SNAPSHOT")) {
+//                uri(snapshotsRepoUrl)
+//            } else {
+//                uri(releasesRepoUrl)
+//            }
+//
+//            credentials {
+//                username = mavenCentralRepositoryUsername
+//                password = mavenCentralRepositoryPassword
+//            }
+//        }
+//    }
+//}
 
 java {
     toolchain {
